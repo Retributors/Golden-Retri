@@ -14,7 +14,6 @@ body {
     justify-content: center;
     height: 100vh;
     overflow: hidden;
-    transition: background 0.5s ease;
 }
 
 header {
@@ -42,22 +41,19 @@ nav {
     padding: 12px 24px;
     font-size: 18px;
     cursor: pointer;
-    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 69, 69, 0.7);
-    font-weight: bold; /* Полужирный шрифт */
 }
 
 .menu-btn:hover {
     color: #ffffff;
     transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(255, 69, 69, 0.9);
 }
 
 .content {
-    padding: 20px; /* Уменьшено для мобильных */
+    padding: 40px;
     text-align: center;
-    max-width: 90%; /* Уменьшено для мобильных */
+    max-width: 600px;
     background: rgba(10, 10, 10, 0.95);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
     border-radius: 10px;
@@ -73,23 +69,11 @@ h1, h2 {
     font-weight: bold; /* Полужирный шрифт */
 }
 
-.price-list p, a {
-    font-size: 18px; /* Уменьшен размер текста для мобильных */
+.price-list p {
+    font-size: 20px;
     line-height: 1.6;
     color: #ff8080;
     text-shadow: 0 0 10px rgba(255, 69, 69, 0.5);
-}
-
-a {
-    color: #ff4d4d;
-    text-decoration: none;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
-    font-weight: bold; /* Полужирный шрифт */
-}
-
-a:hover {
-    color: #ffffff;
-    text-shadow: 0 0 15px rgba(255, 69, 69, 0.8);
 }
 
 hr {
@@ -100,6 +84,7 @@ hr {
     box-shadow: 0 0 10px rgba(255, 69, 69, 0.5);
 }
 
+/* Плавный переход для секций */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -111,18 +96,6 @@ hr {
     }
 }
 
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    100% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-}
-
-/* Styles for visible sections */
 #info-section {
     animation: fadeIn 0.5s forwards;
 }
@@ -130,24 +103,4 @@ hr {
 #price-section {
     animation: fadeIn 0.5s forwards;
     display: none;
-}
-
-/* Мобильные стили */
-@media (max-width: 600px) {
-    .menu-btn {
-        padding: 10px 20px; /* Уменьшено для мобильных */
-    }
-
-    h1, h2 {
-        font-size: 28px; /* Уменьшен размер заголовков для мобильных */
-    }
-
-    .content {
-        padding: 20px;
-        max-width: 90%; /* Уменьшено для мобильных */
-    }
-
-    .price-list p {
-        font-size: 16px; /* Уменьшен размер текста для мобильных */
-    }
 }
