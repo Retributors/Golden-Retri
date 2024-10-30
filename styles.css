@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(135deg, #0d0d0d, #1c1c1c);
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    transition: background 0.5s ease;
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(20, 20, 20, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu-btn {
+    background-color: rgba(30, 30, 30, 0.8);
+    color: #ff4d4d;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 69, 69, 0.7);
+}
+
+.menu-btn:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 69, 69, 0.9);
+}
+
+.content {
+    padding: 40px;
+    text-align: center;
+    max-width: 600px;
+    background: rgba(10, 10, 10, 0.95);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+h1, h2 {
+    color: #ff4d4d;
+    font-size: 36px;
+    text-shadow: 0 0 20px rgba(255, 69, 69, 0.8);
+}
+
+.price-list p, a {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #ff8080;
+    text-shadow: 0 0 10px rgba(255, 69, 69, 0.5);
+}
+
+a {
+    color: #ff4d4d;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 69, 69, 0.8);
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background: #ff4d4d;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(255, 69, 69, 0.5);
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+/* Styles for visible sections */
+#info-section {
+    animation: fadeIn 0.5s forwards;
+}
+
+#price-section {
+    animation: fadeIn 0.5s forwards;
+    display: none;
+}
