@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Retri</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <button class="menu-btn" onclick="showInfo()">Информация</button>
+            <button class="menu-btn" onclick="showPrices()">Price</button>
+        </nav>
+    </header>
+    
+    <section id="info-section" class="content" style="display: block; opacity: 1; transform: translateY(0);">
+        <h2>Информация</h2>
+        <p>By Velory</p>
+        <p>Clan Retributor</p>
+        <p>Owner by clan Retributor</p>
+    </section>
+
+    <section id="price-section" class="content" style="display: none;">
+        <h1>PRICE VELORY</h1>
+        <div class="price-list">
+            <p>DOX - от 9$ (900₽)</p>
+            <p>SWAT - 10$ (1000₽)</p>
+            <p>ДОНОС - 8.5$ (850₽)</p>
+            <hr>
+            <p>DEFF FOREVER - 40$ (4000₽)</p>
+            <p>DEFF 1 MONTH - 20$ (2000₽)</p>
+            <p>DEFF 1 WEEK - 10$ (1000₽)</p>
+            <hr>
+            <p>ОБУЧЕНИЕ - 30$ (3000₽)</p>
+            <hr>
+            <p>ПРИВАТКА - 7$ (700₽)</p>
+            <hr>
+            <p>fiz number - 3$ (300₽)</p>
+            <p>(не всегда есть, узнавайте в лс)</p>
+            <hr>
+            <p>Блок карты обидчика - 10$ (1000₽)</p>
+            <hr>
+            <p>Задавать вопросы, писать по поводу оплаты сюда:</p>
+            <p><a href="https://hitkillme.t.me" target="_blank">Hitkillme.t.me</a></p>
+        </div>
+    </section>
+    
+    <script>
+        function showInfo() {
+            document.getElementById('price-section').style.display = 'none';
+            document.getElementById('info-section').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('info-section').style.opacity = '1';
+                document.getElementById('info-section').style.transform = 'translateY(0)';
+            }, 10);
+        }
+        
+        function showPrices() {
+            document.getElementById('info-section').style.opacity = '0';
+            document.getElementById('info-section').style.transform = 'translateY(20px)';
+            setTimeout(() => {
+                document.getElementById('info-section').style.display = 'none';
+                document.getElementById('price-section').style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('price-section').style.opacity = '1';
+                    document.getElementById('price-section').style.transform = 'translateY(0)';
+                }, 10);
+            }, 500);
+        }
+    </script>
+</body>
+</html>
