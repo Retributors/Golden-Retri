@@ -4,27 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Golden Retri</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <button class="menu-btn" onclick="showInfo()">Информация</button>
-            <button class="menu-btn" onclick="showPrices()">Price</button>
+            <button class="menu-btn" id="info-btn">Информация</button>
+            <button class="menu-btn" id="price-btn">Price</button>
         </nav>
     </header>
     
-    <section id="info-section" class="content" style="display: block; opacity: 1; transform: translateY(0);">
-        <h2>Информация</h2>
-        <p>By Velory</p>
+    <div class="content" id="info-section">
+        <h1>Golden Retri</h1>
+        <h2>By Velory</h2>
         <p>Clan Retributor</p>
         <p>Owner by clan Retributor</p>
-    </section>
-
-    <section id="price-section" class="content" style="display: none;">
-        <h1>PRICE VELORY</h1>
+    </div>
+    
+    <div class="content" id="price-section" style="display: none;">
+        <h2>PRICE VELORY</h2>
+        <hr>
         <div class="price-list">
-            <p>DOX - от 9$ (900₽)</p>
+            <p>DOX - 9$ (900₽)</p>
             <p>SWAT - 10$ (1000₽)</p>
             <p>ДОНОС - 8.5$ (850₽)</p>
             <hr>
@@ -40,34 +41,26 @@
             <p>(не всегда есть, узнавайте в лс)</p>
             <hr>
             <p>Блок карты обидчика - 10$ (1000₽)</p>
-            <hr>
-            <p>Задавать вопросы, писать по поводу оплаты сюда:</p>
-            <p><a href="https://hitkillme.t.me" target="_blank">Hitkillme.t.me</a></p>
+            <p>Задавать вопросы, писать по поводу оплаты сюда</p>
+            <p>Hitkillme.t.me</p>
         </div>
-    </section>
-    
+    </div>
+
     <script>
-        function showInfo() {
-            document.getElementById('price-section').style.display = 'none';
-            document.getElementById('info-section').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('info-section').style.opacity = '1';
-                document.getElementById('info-section').style.transform = 'translateY(0)';
-            }, 10);
-        }
-        
-        function showPrices() {
-            document.getElementById('info-section').style.opacity = '0';
-            document.getElementById('info-section').style.transform = 'translateY(20px)';
-            setTimeout(() => {
-                document.getElementById('info-section').style.display = 'none';
-                document.getElementById('price-section').style.display = 'block';
-                setTimeout(() => {
-                    document.getElementById('price-section').style.opacity = '1';
-                    document.getElementById('price-section').style.transform = 'translateY(0)';
-                }, 10);
-            }, 500);
-        }
+        const infoBtn = document.getElementById('info-btn');
+        const priceBtn = document.getElementById('price-btn');
+        const infoSection = document.getElementById('info-section');
+        const priceSection = document.getElementById('price-section');
+
+        infoBtn.addEventListener('click', () => {
+            infoSection.style.display = 'block';
+            priceSection.style.display = 'none';
+        });
+
+        priceBtn.addEventListener('click', () => {
+            priceSection.style.display = 'block';
+            infoSection.style.display = 'none';
+        });
     </script>
 </body>
 </html>
